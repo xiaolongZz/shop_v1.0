@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" theme-color="default" theme-mode>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title></title>
+    <!-- element-css -->
+    <link rel="stylesheet" href="./css/common/element.css">
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="./css/common/common.css">
+    <!-- 页面独有样式 -->
+    <link rel="stylesheet" href="./css/shop_detail.css">
+</head>
+
+<body>
+    <div id="mainLoading">
+        <div class="ddr ddr1"></div>
+        <div class="ddr ddr2"></div>
+        <div class="ddr ddr3"></div>
+        <div class="ddr ddr4"></div>
+        <div class="ddr ddr5"></div>
+    </div>
+    <div id="content" v-cloak>
+        <el-container style="flex-direction: column;">
+            <top-menu></top-menu>
+            <el-container>
+                <aside-menu></aside-menu>
+                <el-main>
+                    <!-- 自己的 -->
+                    <div class="shop_detail" v-loading="loading">
+                        <div class="top-back" @click="goBack">
+                            <img class="back-img" src="./img/common/back.png" alt="">
+                            <p class="back-text">返回</p>
+                        </div>
+                        <div class="app-detail">
+                            <div class="app-top">
+                                <div class="app-msg">
+                                    <img :src="appData.icon" alt="" class="app-icon">
+                                    <div class="app-introduce">
+                                        <div class="name">
+                                            <span class="name-text">{{appData.name}}</span>
+                                            <img class="safe-img" src="./img/home/safe.png" alt="">
+                                            <img v-show="Number(appData.developer.deposit) > 0" class="copyright-img"
+                                                src="./img/home/copyright.png" alt="">
+                                        </div>
+                                        <div class="star">
+                                            <!-- 亮 -->
+                                            <div class="star-on" :style="{'width':`${Number(appData.score)/5*100}%`}">
+                                                <i class="el-icon-star-on" v-for="start in 5"></i>
+                                            </div>
+                                            <!-- 暗 -->
+                                            <div class="star-off">
+                                                <i class="el-icon-star-off" v-for="start in 5"></i>
+                                            </div>
+
+                                        </div>
+                                        <div class="bottom-msg">
+                                            <div class="row">
+                                                <div class="item">
+                                                    <p class="label">所属分类：</p>
+                                                    <p>{{type[appData.type]}}</p>
+                                                </div>
+                                                <div class="item">
+                                                    <p class="label">当前版本：</p>
+                                                    <p>{{appData.last_version}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="item">
+                                                    <p class="label">销量：</p>
+                                                    <p>{{appData.sell_count}}</p>
+                                                </div>
+                                                <div class="item">
+                                                    <p class="label">更新时间：</p>
+                                                    <p>{{appData.update_time | formateTime}}</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="app-bug-ts">
+                                        <div class="ts">
+                                            <img src="./img/common/waring.png" alt="">
+                                            <p>投诉</p>
+                                        </div>
+                                        <el-button>立即购买</el-button>
+                                    </div>
+                                </div>
+
+                                <div class="client" v-show="JSON.stringify(developerData)!='{}'">
+                                    <div class="client-top">
+                                        <img class="client-logo" :src="developerData.logo" alt="">
+                                        <div class="client-goods-name">
+                                            <div class="name">{{developerData.name}}</div>
+                                            <div class="goods">
+                                                <p class="label">商品数量</p>
+                                                <p class="value">{{developerData.app_count}}</p>
+                                                <div class="colum-line"></div>
+                                                <p class="label">购买量</p>
+                                                <p class="value">{{developerData.sell_count}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="profile" :title="developerData.desc">
+                                        {{developerData.desc}}
+                                    </div>
+                                    <div class="contact-way">
+                                        <div class="row">
+                                            <img src="./img/common/url.png" alt="">
+                                            <div class="label">作者网站</div>
+                                            <a class="value" :href="developerData.web"
+                                                target="_blank">{{developerData.web}}</a>
+                                        </div>
+                                        <div class="row">
+                                            <img src="./img/common/email.png" alt="">
+                                            <div class="label">电子邮箱</div>
+                                            <div class="value">{{developerData.email}}</div>
+                                        </div>
+                                        <div class="row">
+                                            <img src="./img/common/qq.png" alt="">
+                                            <div class="label">咨询QQ</div>
+                                            <div class="value">{{developerData.qq}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <el-tabs v-model="activeName" @tab-click="handleClick">
+                                <el-tab-pane label="商品介绍" name="1">
+                                    商品介绍
+                                </el-tab-pane>
+                                <el-tab-pane label="商品评论" name="2">
+                                    <div class="evaluation" v-loading="evaluationLoading">
+                                        请问
+                                    </div>
+                                </el-tab-pane>
+                                <el-tab-pane label="版本说明" name="3">版本说明</el-tab-pane>
+                            </el-tabs>
+
+                        </div>
+
+                    </div>
+                </el-main>
+            </el-container>
+        </el-container>
+    </div>
+    <!-- =======页面独有======= -->
+    <script src="./api/shop.js"></script>
+    <script src="./js/shop_detail.js"></script>
+    <!-- =======公共======= -->
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="./components/captchaDialog/captchaDialog.js"></script>
+    <script src="./components/countDownButton/countDownButton.js"></script>
+    <script src="./components/loginDialog/loginDialog.js"></script>
+    <script src="./components/topMenu/topMenu.js"></script>
+    <script src="./components/asideMenu/asideMenu.js"></script>
+    <script src="./utils/util.js"></script>
+    <script src="./js/common/common.js"></script>
+    <script src="./js/common/vue.js"></script>
+    <script src="./js/common/element.js"></script>
+    <script src="./js/common/axios.min.js"></script>
+    <script src="./utils/request.js"></script>
+</body>
+
+</html>

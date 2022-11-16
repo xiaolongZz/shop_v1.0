@@ -1,0 +1,227 @@
+.shop_detail .top-back {
+  display: flex;
+  align-items: center;
+  margin-left: 0.4rem;
+  margin-top: 0.16rem;
+  cursor: pointer;
+}
+.shop_detail .top-back .back-img {
+  width: 14px;
+  height: 14px;
+}
+.shop_detail .top-back .back-text {
+  color: #090A3A;
+  margin-left: 0.03rem;
+}
+.shop_detail .app-detail {
+  padding-left: 1.2rem;
+  padding-right: 3.6rem;
+}
+.shop_detail .app-detail .app-top {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #E3E8EE;
+  margin-top: 0.31rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.14rem;
+}
+.shop_detail .app-detail .app-top .app-msg {
+  display: flex;
+}
+.shop_detail .app-detail .app-top .app-msg .app-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.41rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce {
+  padding-bottom: 0.1rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .name {
+  display: flex;
+  align-items: center;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .name .name-text {
+  font-size: 0.24rem;
+  font-weight: bold;
+  color: #090A3A;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .name .safe-img {
+  margin-left: 0.08rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .name .copyright-img {
+  margin-left: 0.08rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .star {
+  width: 95px;
+  height: 22px;
+  position: relative;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .star .star-on {
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .star .star-on i {
+  width: 19px;
+  font-size: 19px;
+  color: #FEBF13;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .star .star-off {
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .star .star-off i {
+  color: #FEBF13;
+  font-size: 19px;
+  width: 19px;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .bottom-msg {
+  min-width: 3.35rem;
+  margin-top: 0.21rem;
+  padding-top: 0.21rem;
+  border-top: 1px dashed #E3E8EE;
+  display: flex;
+  flex-direction: column;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .bottom-msg .row {
+  display: flex;
+  margin-bottom: 0.06rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .bottom-msg .row .item {
+  width: 50%;
+  display: flex;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .bottom-msg .row .item .label {
+  color: #656A88;
+}
+.shop_detail .app-detail .app-top .app-msg .app-introduce .bottom-msg .row .item .value {
+  color: #090A3A;
+}
+.shop_detail .app-detail .app-top .app-msg .app-bug-ts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.1rem;
+  margin-left: 0.85rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-bug-ts .ts {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.shop_detail .app-detail .app-top .app-msg .app-bug-ts .ts img {
+  width: 14px;
+  height: 14px;
+  margin-right: 0.04rem;
+}
+.shop_detail .app-detail .app-top .app-msg .app-bug-ts .el-button {
+  color: #FFFFFF;
+  font-size: 16px;
+  background: #161EDE;
+}
+.shop_detail .app-detail .app-top .client {
+  width: 255px;
+  border: 1px solid #E3E8EE;
+  border-radius: 14px;
+  padding-top: 0.2rem;
+  padding-left: 0.24rem;
+  padding-right: 0.21rem;
+  padding-bottom: 0.17rem;
+}
+.shop_detail .app-detail .app-top .client .client-top {
+  display: flex;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-logo {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.14rem;
+  margin-top: 0.03rem;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name .name {
+  font-size: 0.18rem;
+  font-weight: bold;
+  color: #090A3A;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name .goods {
+  display: flex;
+  align-items: center;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name .goods .label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #656A88;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name .goods .value {
+  font-size: 16px;
+  color: #090A3A;
+  margin-left: 0.06rem;
+}
+.shop_detail .app-detail .app-top .client .client-top .client-goods-name .goods .colum-line {
+  width: 0px;
+  height: 0.1rem;
+  border: 1px solid #E3E8EE;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+.shop_detail .app-detail .app-top .client .profile {
+  margin-top: 0.12rem;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #656A88;
+}
+.shop_detail .app-detail .app-top .client .contact-way {
+  margin-top: 0.22rem;
+}
+.shop_detail .app-detail .app-top .client .contact-way .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.09rem;
+}
+.shop_detail .app-detail .app-top .client .contact-way .row:last-child {
+  margin-bottom: 0;
+}
+.shop_detail .app-detail .app-top .client .contact-way .row img {
+  width: 14px;
+  height: 14px;
+}
+.shop_detail .app-detail .app-top .client .contact-way .row .label {
+  width: 48px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #656A88;
+  margin-left: 0.02rem;
+  margin-right: 0.19rem;
+}
+.shop_detail .app-detail .app-top .client .contact-way .row .value {
+  font-size: 14px;
+  color: #090A3A;
+  text-decoration: none;
+}
+.shop_detail .app-detail .el-tabs__item {
+  color: #161EDE;
+  height: 30px;
+}
+.shop_detail .app-detail .el-tabs__active-bar {
+  height: 1px;
+  background: #161EDE;
+}
+.shop_detail .app-detail .el-tabs__nav-wrap::after {
+  background: none;
+}
+.shop_detail .app-detail .el-tabs__content {
+  background: #F7FAFC;
+}
